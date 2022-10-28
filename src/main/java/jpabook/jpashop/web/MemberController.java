@@ -34,6 +34,7 @@ public class MemberController {
 
     @PostMapping("/members/new")
     public String create(@Valid MemberForm form, BindingResult result) {
+        /* BindingResult 는 에러가 있다면 에러를 받고 로직을 실행한다 */
         if (result.hasErrors()) {
             return "members/createMemberForm";
         }
